@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="488.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assistant.fx.controller.OperationController">
+    <children>
+        <VBox prefHeight="95.0" prefWidth="600.0">
+            <children>
+                <Pane prefHeight="33.0" prefWidth="600.0">
+                    <children>
+                        <Button layoutX="14.0" layoutY="2.0" mnemonicParsing="false" onAction="#backToStart" text="&lt;" />
+                        <Button layoutX="458.0" layoutY="2.0" mnemonicParsing="false" onAction="#saveScenario" text="Сохранить" />
+                        <TextField fx:id="nameScenarioField" alignment="CENTER" layoutX="230.0" layoutY="5.0" text="Название Сценария" />
+                    </children>
+                </Pane>
+            </children>
+        </VBox>
+        <VBox prefHeight="302.0" prefWidth="600.0">
+            <children>
+                <ListView fx:id="listView" prefHeight="253.0" prefWidth="600.0" />
+            </children>
+        </VBox>
+        <TabPane fx:id="tabPane" prefHeight="210.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Open url">
+                    <content>
+                        <fx:include source="/template/block/add-open-url-create-view.fxml" />
+                    </content>
+                </Tab>
+                <Tab text="Tracking">
+                    <content>
+                        <fx:include source="/template/block/add-tracking-create-view.fxml" />
+                    </content>
+                </Tab>
+                <Tab text="Click">
+                    <content>
+                        <fx:include source="/template/block/add-click-create-view.fxml" />
+                    </content>
+                </Tab>
+                <Tab text="Input text">
+                    <content>
+                        <fx:include source="/template/block/add-input-text-create-view.fxml" />
+                    </content>
+                </Tab>
+                <Tab text="Back">
+                    <content>
+                        <fx:include source="/template/block/add-back-create-view.fxml" />
+                    </content>
+                </Tab>
+                <Tab fx:id="fieldEditOperation" text="Edit Operation">
+                    <content>
+                        <fx:include source="/template/block/edit-operation-view.fxml" />
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</VBox>

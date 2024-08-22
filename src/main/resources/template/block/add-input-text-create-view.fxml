@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="98.0" prefWidth="586.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assistant.fx.controller.embeddable_controller.InputTextController">
+    <children>
+        <Button layoutX="511.0" layoutY="63.0" mnemonicParsing="false" onAction="#addInputOperation" prefHeight="0.0" prefWidth="69.0" text="Добавить" />
+        <TextField fx:id="nameField" alignment="CENTER" layoutX="6.0" layoutY="7.0" prefHeight="25.0" prefWidth="95.0" text="Name method" />
+        <TextField fx:id="elementField" alignment="CENTER" layoutX="6.0" layoutY="38.0" prefHeight="25.0" prefWidth="95.0" text="Path selector" />
+        <ComboBox fx:id="timeoutField" layoutX="57.0" layoutY="66.0" prefHeight="25.0" prefWidth="44.0" />
+        <Label layoutX="8.0" layoutY="68.0" text="Timeout" />
+        <TextField fx:id="inputTextField" alignment="CENTER" layoutX="245.0" layoutY="7.0" prefHeight="85.0" prefWidth="256.0" text="Input Text" />
+        <AnchorPane layoutX="500.0" layoutY="-1.0" prefHeight="65.0" prefWidth="88.0">
+            <children>
+                <Label layoutX="15.0" layoutY="14.0" text="For Tracker" />
+                <ChoiceBox fx:id="choiceBoxTracking" layoutX="11.0" layoutY="35.0" prefHeight="25.0" prefWidth="69.0" />
+            </children>
+        </AnchorPane>
+      <Label fx:id="errorNameField" layoutX="107.0" layoutY="11.0" prefHeight="17.0" prefWidth="129.0" text="nameError" textFill="red" visible="false" />
+      <Label fx:id="errorElementField" layoutX="107.0" layoutY="41.0" prefHeight="17.0" prefWidth="129.0" text="elementError" textFill="red" visible="false" />
+      <CheckBox fx:id="pushEnter" layoutX="136.0" layoutY="70.0" mnemonicParsing="false" text="push ENTER" />
+    </children>
+</AnchorPane>

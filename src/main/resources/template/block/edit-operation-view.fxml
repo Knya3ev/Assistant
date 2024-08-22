@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="128.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assistant.fx.controller.embeddable_controller.EditOperationController">
+    <children>
+        <Button layoutX="516.0" layoutY="88.0" mnemonicParsing="false" onAction="#saveOperation" text="Сохранить" />
+        <Label layoutX="11.0" layoutY="41.0" prefHeight="17.0" prefWidth="34.0" text="name" />
+        <Label layoutX="10.0" layoutY="67.0" prefHeight="17.0" prefWidth="48.0" text="url" />
+        <Label layoutX="10.0" layoutY="95.0" prefHeight="17.0" prefWidth="48.0" text="selector" />
+        <TextField fx:id="name" layoutX="66.0" layoutY="37.0" prefHeight="25.0" prefWidth="185.0" text="name" />
+        <TextField fx:id="url" layoutX="66.0" layoutY="63.0" prefHeight="25.0" prefWidth="185.0" text="url" />
+        <TextField fx:id="selector" layoutX="66.0" layoutY="90.0" prefHeight="25.0" prefWidth="185.0" text="selector" />
+        <TextArea fx:id="inputText" layoutX="258.0" layoutY="6.0" prefHeight="94.0" prefWidth="254.0" text="input text" />
+        <Label layoutX="9.0" layoutY="6.0" prefHeight="25.0" prefWidth="69.0" text="Operation : " />
+        <Label fx:id="typeOperation" layoutX="77.0" layoutY="6.0" prefHeight="25.0" prefWidth="171.0" text="Operation : " />
+
+        <Label fx:id="forTrackingLabel" layoutX="523.0" layoutY="35.0" text="For Tracker" />
+        <ChoiceBox fx:id="choiceBoxTracking" layoutX="519.0" layoutY="56.0" prefHeight="25.0" prefWidth="69.0" />
+      <TextField fx:id="numberOfIteration" layoutX="518.0" layoutY="6.0" prefHeight="25.0" prefWidth="69.0" text="count" />
+      <CheckBox fx:id="isClicked" layoutX="258.0" layoutY="104.0" mnemonicParsing="false" text="нажать при появление / push ENTER" />
+    </children>
+</AnchorPane>

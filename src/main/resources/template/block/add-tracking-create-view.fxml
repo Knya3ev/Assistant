@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="147.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assistant.fx.controller.embeddable_controller.TrackingController">
+    <children>
+        <Button layoutX="521.0" layoutY="110.0" mnemonicParsing="false" onAction="#addTracking" prefHeight="0.0" prefWidth="69.0" text="Добавить" />
+        <Label layoutX="11.0" layoutY="11.0" text="Название действия " />
+        <Label layoutX="11.0" layoutY="36.0" text="Элемент который будет ослеживаться " />
+        <Label layoutX="10.0" layoutY="69.0" text="С какой преодичностью он будет проверять " />
+        <TextField fx:id="nameField" alignment="CENTER" layoutX="267.0" layoutY="7.0" prefHeight="25.0" prefWidth="148.0" text="Name tracking" />
+        <TextField fx:id="elementField" alignment="CENTER" layoutX="266.0" layoutY="36.0" text="css selector" />
+        <ComboBox fx:id="timeoutField" layoutX="265.0" layoutY="63.0" prefHeight="25.0" prefWidth="81.0" />
+        <Label layoutX="355.0" layoutY="67.0" prefHeight="17.0" prefWidth="62.0" text="micro sec" />
+        <Label fx:id="errorNameField" layoutX="435.0" layoutY="11.0" prefHeight="17.0" prefWidth="148.0" text="name" textFill="red" visible="false" />
+        <Label fx:id="errorElementField" layoutX="435.0" layoutY="40.0" prefHeight="17.0" prefWidth="148.0" text="element" textFill="red" visible="false" />
+        <CheckBox fx:id="isClicked" layoutX="10.0" layoutY="119.0" mnemonicParsing="false" text="нажать при появление" />
+        <TextField fx:id="numberOfIterationsField" layoutX="169.0" layoutY="90.0" prefHeight="25.0" prefWidth="48.0" text="200" />
+        <Label layoutX="11.0" layoutY="93.0" prefHeight="17.0" prefWidth="158.0" text="Колическтво повторений " />
+        <Label fx:id="errorNumberIteration" layoutX="228.0" layoutY="95.0" prefHeight="17.0" prefWidth="275.0" text="Error Message" textFill="red" visible="false" />
+    </children>
+</AnchorPane>

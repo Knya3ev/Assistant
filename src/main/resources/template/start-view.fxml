@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="418.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.assistant.fx.controller.StartController">
+    <children>
+
+        <Pane prefHeight="527.0" prefWidth="600.0">
+            <children>
+                <Pane layoutY="365.0" prefHeight="53.0" prefWidth="600.0">
+                    <children>
+                        <Button layoutX="206.0" layoutY="14.0" mnemonicParsing="false" onAction="#createScenario"
+                                prefHeight="25.0" prefWidth="188.0" text="создать"/>
+                    </children>
+                </Pane>
+                <Pane prefHeight="32.0" prefWidth="600.0">
+                    <children>
+                        <Label layoutX="14.0" layoutY="10.0" prefHeight="17.0" prefWidth="148.0"
+                               text="Название сценария"/>
+                        <Label layoutX="401.0" layoutY="10.0" text="Status"/>
+                        <Button onAction="#updateList" layoutX="444.0" layoutY="3.0" mnemonicParsing="false"
+                                text="Обновить"/>
+                    </children>
+                </Pane>
+                <ListView fx:id="listViewScenario" layoutY="32.0" prefHeight="327.0" prefWidth="600.0"/>
+            </children>
+        </Pane>
+
+    </children>
+</VBox>

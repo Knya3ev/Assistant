@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="79.0" prefWidth="582.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.assistant.fx.controller.embeddable_controller.OpenUrlController">
+    <children>
+        <Button layoutX="504.0" layoutY="38.0" mnemonicParsing="false" onAction="#createUrl" text="Добавить" />
+        <TextField fx:id="urlField" alignment="CENTER" layoutX="9.0" layoutY="38.0" prefHeight="25.0" prefWidth="481.0" text="Укажите ссылку которую нужно открыть " />
+        <Label fx:id="errorLabel" contentDisplay="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="475.0" textFill="red" visible="false" />
+    </children>
+</AnchorPane>

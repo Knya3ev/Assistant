@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="95.0" prefWidth="587.0"
+            xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.assistant.fx.controller.embeddable_controller.BackController">
+    <children>
+        <Button onAction="#addBack" layoutX="511.0" layoutY="63.0" mnemonicParsing="false" prefHeight="0.0"
+                prefWidth="69.0" text="Добавить"/>
+        <ComboBox fx:id="timeoutField" layoutX="78.0" layoutY="66.0" prefHeight="25.0" prefWidth="50.0"/>
+        <Label layoutX="21.0" layoutY="68.0" text="Timeout"/>
+        <AnchorPane layoutX="500.0" layoutY="-1.0" prefHeight="65.0" prefWidth="88.0">
+            <children>
+                <Label layoutX="15.0" layoutY="14.0" text="For Tracker"/>
+                <ChoiceBox fx:id="choiceBoxTracking" layoutX="11.0" layoutY="35.0" prefHeight="25.0" prefWidth="69.0"/>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
