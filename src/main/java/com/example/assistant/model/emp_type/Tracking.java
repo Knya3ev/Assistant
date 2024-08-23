@@ -1,8 +1,10 @@
-package com.example.assistant.model;
+package com.example.assistant.model.emp_type;
 
 
+import com.example.assistant.model.Operation;
 import com.example.assistant.model.enums.OperationName;
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -25,6 +27,7 @@ public class Tracking extends Operation {
 
     private String selector;
 
+    @Column(name = "number_of_iteration")
     private int numberOfIterations;
 
     private boolean isClicked;

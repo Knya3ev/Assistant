@@ -10,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OrderBy;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,7 +28,8 @@ import java.util.List;
 @Entity(name = "scenario")
 public class Scenario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(allocationSize = 1, name = "scenario_seq", sequenceName = "scenario_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "scenario_seq")
     private Long id;
 
     private String name;

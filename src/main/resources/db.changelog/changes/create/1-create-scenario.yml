@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-scenario
+      author: Mikhail Knyazev
+
+      changes:
+        - createSequence:
+            sequenceName: scenario_seq
+            dataType: bigint
+            startValue: 1
+            incrementBy: 1
+            minValue: 1
+            maxValue: 9223372036854775807
+            cycle: false
+            cacheSize: 1
+
+
+        - createTable:
+            tableName: scenario
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: scenario_pk
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: error_message
+                  type: varchar(255)
+              - column:
+                  name: is_run
+                  type: boolean
+                  defaultValueBoolean: false

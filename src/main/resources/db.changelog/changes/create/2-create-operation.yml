@@ -1,0 +1,90 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-operation
+      author: Mikhail Knyazev
+
+      changes:
+        - createSequence:
+            sequenceName: operation_seq
+            dataType: bigint
+            startValue: 1
+            incrementBy: 1
+            minValue: 1
+            maxValue: 9223372036854775807
+            cycle: false
+            cacheSize: 1
+
+
+        - createTable:
+            tableName: operation
+            columns:
+              - column:
+                  name: emp_type
+                  type: varchar(255)
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: operation_pk
+              - column:
+                  name: end_point
+                  type: boolean
+                  defaultValueBoolean: false
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: order_operation
+                  type: integer
+              - column:
+                  name: timeout
+                  type: integer
+              - column:
+                  name: type
+                  type: varchar(255)
+              - column:
+                  name: selector
+                  type: varchar(255)
+              - column:
+                  name: input_text
+                  type: varchar(600)
+              - column:
+                  name: is_push
+                  type: boolean
+                  defaultValueBoolean: false
+              - column:
+                  name: url
+                  type: varchar(255)
+              - column:
+                  name: is_clicked
+                  type: boolean
+              - column:
+                  name: number_of_iteration
+                  type: integer
+              - column:
+                  name: scenario_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: scenario_fk
+              - column:
+                  name: tracking_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: tracking_fk
+
+
+        - addForeignKeyConstraint:
+            baseTableName: operation
+            baseColumnNames: scenario_id
+            constraintName: scenario_fk
+            referencedTableName: scenario
+            referencedColumnNames: id
+            onDelete: CASCADE
+
+        - addForeignKeyConstraint:
+            baseTableName: operation
+            baseColumnNames: tracking_id
+            constraintName: tracking_fk
+            referencedTableName: operation
+            referencedColumnNames: id

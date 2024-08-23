@@ -40,3 +40,5 @@ out/
 /drivers/
 /exe/
 /src/main/java/com/example/assistant/data/
+/src/main/resources/db.changelog/data/data-insert.yml
+/src/main/resources/db.changelog/data/

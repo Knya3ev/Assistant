@@ -2,10 +2,9 @@ package com.example.assistant.comanda;
 
 import com.example.assistant.exception.TrackingException;
 import com.example.assistant.model.Operation;
-import com.example.assistant.model.Tracking;
+import com.example.assistant.model.emp_type.Tracking;
 import com.example.assistant.model.enums.OperationName;
 import lombok.extern.slf4j.Slf4j;
-import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;

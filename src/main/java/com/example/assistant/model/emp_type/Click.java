@@ -1,5 +1,7 @@
-package com.example.assistant.model;
+package com.example.assistant.model.emp_type;
 
+
+import com.example.assistant.model.Operation;
 import com.example.assistant.model.enums.OperationName;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
@@ -9,17 +11,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Builder
 @Getter
 @Setter
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@DiscriminatorValue(value = "OPEN")
-public class OpenUrl extends Operation {
+@DiscriminatorValue(value = "CLICK")
+public class Click extends Operation {
 
-    private String url;
-
+    private String selector;
     @Builder.Default
-    private OperationName type = OperationName.OPEN;
+    private OperationName type = OperationName.CLICK;
+
 }

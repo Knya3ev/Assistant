@@ -1,12 +1,10 @@
 package com.example.assistant.fx.controller.embeddable_controller;
 
-import com.example.assistant.fx.controller.OperationController;
 import com.example.assistant.fx.controller.observableObjects.OperationObservable;
 import com.example.assistant.fx.controller.observableObjects.TrackingObservable;
 import com.example.assistant.fx.utils.ErrorMessage;
 import com.example.assistant.fx.utils.FxUtils;
-import com.example.assistant.model.Click;
-import com.example.assistant.model.Operation;
+import com.example.assistant.model.emp_type.Click;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;

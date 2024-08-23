@@ -1,6 +1,6 @@
-package com.example.assistant.model;
+package com.example.assistant.model.emp_type;
 
-
+import com.example.assistant.model.Operation;
 import com.example.assistant.model.enums.OperationName;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
@@ -16,11 +16,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@DiscriminatorValue(value = "CLICK")
-public class Click extends Operation {
-
-    private String selector;
+@DiscriminatorValue(value = "BACK")
+public class Back extends Operation {
     @Builder.Default
-    private OperationName type = OperationName.CLICK;
-
+    private OperationName type = OperationName.BACK;
 }

@@ -2,7 +2,7 @@ package com.example.assistant.fx.controller.observableObjects;
 
 
 import com.example.assistant.model.Operation;
-import com.example.assistant.model.Tracking;
+import com.example.assistant.model.emp_type.Tracking;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
