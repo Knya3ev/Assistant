@@ -26,7 +26,7 @@ public class ScenarioService {
     private OperationsOrchestrator orchestrator;
 
     @Transactional
-    public void startScenario(Long scenarioId, ListView<Scenario> listViewScenario) {
+    public void startScenario(Long scenarioId) {
         Scenario scenario = get(scenarioId);
         scenario.setErrorMessage(null);
 
@@ -72,7 +72,6 @@ public class ScenarioService {
     }
 
 
-
     @Transactional
     public void saveScenario(String nameScenario, List<Operation> operations) {
         log.info("Saving scenario: {}", nameScenario);
@@ -93,7 +92,7 @@ public class ScenarioService {
     public void toggle(Scenario scenario) {
         log.info("Toggle scenario: {}", scenario.getName());
         log.info("Toggle after is run: {}", scenario.isRun());
-        scenarioRepository.toggleIsRunnable(scenario.getId(), scenario.isRun()? Boolean.FALSE : Boolean.TRUE);
+        scenarioRepository.toggleIsRunnable(scenario.getId(), scenario.isRun() ? Boolean.FALSE : Boolean.TRUE);
         log.info("Toggle before is run: {}", get(scenario.getId()).isRun());
     }
 
@@ -122,4 +121,9 @@ public class ScenarioService {
         scenario.setErrorMessage(errorMessage);
     }
 
+    @Transactional
+    public void updateCountRestart(Scenario scenario, Integer newValue) {
+        log.info("scenario id {} updated", scenario.getId());
+        scenarioRepository.updateCountRestartScenario(scenario.getId(), newValue);
+    }
 }

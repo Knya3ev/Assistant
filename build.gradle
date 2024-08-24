@@ -77,7 +77,6 @@ dependencies {
     }
 
     implementation 'org.seleniumhq.selenium:selenium-java:4.12.1'
-
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
     implementation 'io.github.bonigarcia:webdrivermanager:5.5.0'

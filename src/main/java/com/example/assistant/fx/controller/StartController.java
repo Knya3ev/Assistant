@@ -11,6 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -48,17 +49,18 @@ public class StartController {
         scenarioObservable.refresh();
 
         listViewScenario.setCellFactory(lv -> new ListCell<Scenario>() {
-            private final Button run = new Button();
+            private final ComboBox<Integer> comboBox = new ComboBox<>();
             private final Button edit = new Button("Edit");
             private final Button deleteButton = new Button("Delete");
 
+            private final Button run = new Button();
 
             {
 
                 run.setOnAction(event -> {
                     Scenario scenario = getItem();
                     scenarioService.toggle(scenario);
-                    scenarioService.startScenario(scenario.getId(), listViewScenario);
+                    scenarioService.startScenario(scenario.getId());
                     scenarioObservable.refresh();
                 });
 
@@ -84,9 +86,29 @@ public class StartController {
                     setText(null);
                     setGraphic(null);
                 } else {
+
+                    comboBox.getItems().clear();
+                    comboBox.getItems().addAll(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+                    comboBox.setValue(scenario.getCountRestarts());
+
+                    comboBox.valueProperty().addListener((obs, oldValue, newValue) -> {
+
+                        if (newValue != null && oldValue != null) {
+                            if (scenario.getId() != null) {
+                                scenarioService.updateCountRestart(scenario, newValue);
+                            }
+                            if (oldValue == scenario.getCountRestarts()) {
+                                scenario.setCountRestarts(newValue);
+                            }
+
+                        }
+                    });
+
+
+
                     run.setText(scenario.isRun() ? "Stop" : "Run");
 
-                    HBox hBox = FxUtils.getHBoxForScenario(scenario, run, edit, deleteButton);
+                    HBox hBox = FxUtils.getHBoxForScenario(scenario,comboBox, run, edit, deleteButton);
                     setGraphic(hBox);
                 }
             }

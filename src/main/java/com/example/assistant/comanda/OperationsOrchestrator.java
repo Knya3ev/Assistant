@@ -44,12 +44,23 @@ public class OperationsOrchestrator {
             } catch (RuntimeException e) {
                 log.error(e.getMessage(), e);
                 scenarioService.pushErrorMessage(scenario.getId(), e.getMessage().length() < 255 ? e.getMessage() : "error");
+                driver.quit();
 
 
             } finally {
                 log.info("FINALLY --- Stopping scenario in thread " + Thread.currentThread().getName());
                 scenarioService.toggle(scenario);
                 Platform.runLater(scenarioObservable::refresh);
+                scenario = scenarioService.get(scenario.getId());
+
+                if (scenario.getCountRestarts() > 0 && scenario.getErrorMessage() != null){
+                    log.info("scenario restart");
+                    scenarioService.updateCountRestart(scenario, scenario.getCountRestarts()- 1);
+                    scenarioService.toggle(scenario);
+                    scenarioService.startScenario(scenario.getId());
+                    Platform.runLater(scenarioObservable::refresh);
+                }
+
             }
             executorService.shutdown();
         };

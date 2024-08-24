@@ -34,3 +34,8 @@ databaseChangeLog:
                   name: is_run
                   type: boolean
                   defaultValueBoolean: false
+              - column:
+                  name: count_restart
+                  type: integer
+                  defaultValueNumeric: 0
+
