@@ -1,6 +1,6 @@
 package com.example.assistant.comanda;
 
-import com.example.assistant.model.Back;
+import com.example.assistant.model.emp_type.Back;
 import com.example.assistant.model.Operation;
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;

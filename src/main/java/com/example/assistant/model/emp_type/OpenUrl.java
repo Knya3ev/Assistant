@@ -1,5 +1,6 @@
-package com.example.assistant.model;
+package com.example.assistant.model.emp_type;
 
+import com.example.assistant.model.Operation;
 import com.example.assistant.model.enums.OperationName;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
@@ -9,14 +10,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Builder
 @Getter
 @Setter
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@DiscriminatorValue(value = "BACK")
-public class Back extends Operation{
+@DiscriminatorValue(value = "OPEN")
+public class OpenUrl extends Operation {
+
+    private String url;
+
     @Builder.Default
-    private OperationName type = OperationName.BACK;
+    private OperationName type = OperationName.OPEN;
 }

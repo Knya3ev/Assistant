@@ -2,7 +2,7 @@ package com.example.assistant.fx.controller.embeddable_controller;
 
 import com.example.assistant.fx.controller.observableObjects.OperationObservable;
 import com.example.assistant.fx.controller.observableObjects.TrackingObservable;
-import com.example.assistant.model.Back;
+import com.example.assistant.model.emp_type.Back;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;

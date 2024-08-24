@@ -1,20 +1,16 @@
 package com.example.assistant.fx.utils;
 
-import com.example.assistant.model.OpenUrl;
+import com.example.assistant.model.emp_type.OpenUrl;
 import com.example.assistant.model.Operation;
 import com.example.assistant.model.Scenario;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Paint;
-import javafx.util.Callback;
 
 import java.util.Arrays;
 import java.util.Objects;

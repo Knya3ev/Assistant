@@ -21,4 +21,12 @@ public interface ScenarioRepository extends JpaRepository<Scenario, Long> {
     void toggleIsRunnable(@Param("scenarioId") Long scenarioId, @Param("isRun") boolean isRun);
 
     Optional<Scenario> findByName(String chatAssistant);
+
+    @Modifying
+    @Query(value = """
+            UPDATE Scenario 
+            SET count_restart = :newValue
+            WHERE id = :scenarioId
+            """, nativeQuery = true)
+    void updateCountRestartScenario(@Param("scenarioId") Long id, @Param("newValue") Integer newValue);
 }

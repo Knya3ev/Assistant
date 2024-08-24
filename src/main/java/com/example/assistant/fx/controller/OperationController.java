@@ -9,12 +9,10 @@ import com.example.assistant.fx.utils.FxUtils;
 import com.example.assistant.fx.utils.RootFX;
 import com.example.assistant.model.Operation;
 import com.example.assistant.model.Scenario;
-import com.example.assistant.model.Tracking;
+import com.example.assistant.model.emp_type.Tracking;
 import com.example.assistant.model.enums.OperationName;
 import com.example.assistant.service.OperationService;
 import com.example.assistant.service.ScenarioService;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -32,7 +30,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.Comparator;
-import java.util.concurrent.atomic.AtomicInteger;
 
 @Component
 @Slf4j

@@ -6,6 +6,7 @@ plugins {
     id 'org.javamodularity.moduleplugin' version '1.8.12'
     id 'org.openjfx.javafxplugin' version '0.0.13'
     id 'org.beryx.jlink' version '2.25.0'
+    id 'org.liquibase.gradle' version '2.0.4'
 }
 
 group = 'com.example'
@@ -60,6 +61,8 @@ dependencies {
     implementation('com.dlsc.formsfx:formsfx-core:11.6.0') {
         exclude(group: 'org.openjfx')
     }
+
+    implementation 'org.liquibase:liquibase-core:4.20.0'
     implementation('net.synedra:validatorfx:0.4.0') {
         exclude(group: 'org.openjfx')
     }
@@ -74,7 +77,6 @@ dependencies {
     }
 
     implementation 'org.seleniumhq.selenium:selenium-java:4.12.1'
-
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
     implementation 'io.github.bonigarcia:webdrivermanager:5.5.0'

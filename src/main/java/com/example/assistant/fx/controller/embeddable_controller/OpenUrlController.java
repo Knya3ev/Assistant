@@ -2,7 +2,7 @@ package com.example.assistant.fx.controller.embeddable_controller;
 
 import com.example.assistant.fx.controller.observableObjects.OperationObservable;
 import com.example.assistant.fx.utils.ErrorMessage;
-import com.example.assistant.model.OpenUrl;
+import com.example.assistant.model.emp_type.OpenUrl;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;

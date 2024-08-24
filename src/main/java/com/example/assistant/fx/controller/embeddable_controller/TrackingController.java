@@ -4,7 +4,7 @@ import com.example.assistant.fx.controller.observableObjects.OperationObservable
 import com.example.assistant.fx.controller.observableObjects.TrackingObservable;
 import com.example.assistant.fx.utils.ErrorMessage;
 import com.example.assistant.fx.utils.FxUtils;
-import com.example.assistant.model.Tracking;
+import com.example.assistant.model.emp_type.Tracking;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;

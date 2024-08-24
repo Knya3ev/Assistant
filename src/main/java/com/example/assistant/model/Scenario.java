@@ -9,8 +9,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OrderBy;
-import jakarta.persistence.Transient;
+import jakarta.persistence.SequenceGenerator;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -27,7 +26,8 @@ import java.util.List;
 @Entity(name = "scenario")
 public class Scenario {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(allocationSize = 1, name = "scenario_seq", sequenceName = "scenario_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "scenario_seq")
     private Long id;
 
     private String name;
@@ -40,5 +40,8 @@ public class Scenario {
 
     @Builder.Default
     private boolean isRun = false;
+
+    @Column(name = "count_restart")
+    private int countRestarts = 0;
 
 }

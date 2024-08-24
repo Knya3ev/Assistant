@@ -1,9 +1,7 @@
 package com.example.assistant.fx.controller.observableObjects;
 
 
-import com.example.assistant.model.Operation;
 import com.example.assistant.model.Scenario;
-import com.example.assistant.model.Tracking;
 import com.example.assistant.service.ScenarioService;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;

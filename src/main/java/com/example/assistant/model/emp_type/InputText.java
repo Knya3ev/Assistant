@@ -1,11 +1,11 @@
-package com.example.assistant.model;
+package com.example.assistant.model.emp_type;
 
 
+import com.example.assistant.model.Operation;
 import com.example.assistant.model.enums.OperationName;
 import jakarta.persistence.Column;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

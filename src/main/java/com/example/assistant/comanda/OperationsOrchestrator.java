@@ -4,8 +4,6 @@ package com.example.assistant.comanda;
 import com.example.assistant.fx.controller.observableObjects.ScenarioObservable;
 import com.example.assistant.model.Operation;
 import com.example.assistant.model.Scenario;
-import com.example.assistant.model.Tracking;
-import com.example.assistant.model.enums.OperationName;
 import com.example.assistant.service.ScenarioService;
 import javafx.application.Platform;
 import lombok.RequiredArgsConstructor;
@@ -15,7 +13,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicReference;
@@ -47,12 +44,23 @@ public class OperationsOrchestrator {
             } catch (RuntimeException e) {
                 log.error(e.getMessage(), e);
                 scenarioService.pushErrorMessage(scenario.getId(), e.getMessage().length() < 255 ? e.getMessage() : "error");
+                driver.quit();
 
 
             } finally {
                 log.info("FINALLY --- Stopping scenario in thread " + Thread.currentThread().getName());
                 scenarioService.toggle(scenario);
                 Platform.runLater(scenarioObservable::refresh);
+                scenario = scenarioService.get(scenario.getId());
+
+                if (scenario.getCountRestarts() > 0 && scenario.getErrorMessage() != null){
+                    log.info("scenario restart");
+                    scenarioService.updateCountRestart(scenario, scenario.getCountRestarts()- 1);
+                    scenarioService.toggle(scenario);
+                    scenarioService.startScenario(scenario.getId());
+                    Platform.runLater(scenarioObservable::refresh);
+                }
+
             }
             executorService.shutdown();
         };
