@@ -89,3 +89,4 @@ tasks.withType(org.springframework.boot.gradle.tasks.bundling.BootJar) {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 // еще новое изменение 1
+// подтянул изменения из ветки main и добавил изменения в add-fech
