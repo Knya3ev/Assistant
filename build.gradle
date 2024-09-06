@@ -88,4 +88,4 @@ tasks.named('test') {
 tasks.withType(org.springframework.boot.gradle.tasks.bundling.BootJar) {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
-// новое изменение в 2.25.0
+// еще новое изменение 1
